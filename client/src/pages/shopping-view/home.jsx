@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import bannerOne from "../../assets/banner-1.webp";
 import bannerTwo from "../../assets/banner-2.webp";
 import bannerThree from "../../assets/banner-3.webp";
+
 import {
   Airplay,
   BabyIcon,
@@ -10,13 +11,31 @@ import {
   CloudLightning,
   Heater,
   Images,
+  LaptopMinimal,
   Shirt,
   ShirtIcon,
   ShoppingBasket,
+  TabletSmartphone,
   UmbrellaIcon,
+  Users,
   WashingMachine,
   WatchIcon,
+  WifiHigh,
 } from "lucide-react";
+import {
+  FaMobileAlt,
+  FaLaptop,
+  FaUser,
+  FaHdd,
+  FaUmbrella,
+  FaHeart,
+  FaHeadphones,
+  FaShoppingBasket,
+  FaBroadcastTower,
+  FaBoxOpen,
+  FaCouch,
+} from "react-icons/fa"; // Importing icons
+
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -32,21 +51,22 @@ import ProductDetailsDialog from "@/components/shopping-view/product-details";
 import { getFeatureImages } from "@/store/common-slice";
 
 const categoriesWithIcon = [
-  { id: "men", label: "Men", icon: ShirtIcon },
-  { id: "women", label: "Women", icon: CloudLightning },
-  { id: "kids", label: "Kids", icon: BabyIcon },
-  { id: "accessories", label: "Accessories", icon: WatchIcon },
-  { id: "footwear", label: "Footwear", icon: UmbrellaIcon },
+  { id: "mobileAccessories", label: "Mobile Accessories", icon: FaMobileAlt },
+  { id: "smartDevices", label: "Smart Devices", icon: FaLaptop },
+  { id: "personalCare", label: "Personal Care Appliances", icon: FaUser },
+  { id: "storagePeripherals", label: "Storage and Peripherals", icon: FaHdd },
+  { id: "homeDecor", label: "Home Decor", icon: FaCouch },
 ];
 
 const brandsWithIcon = [
-  { id: "nike", label: "Nike", icon: Shirt },
-  { id: "adidas", label: "Adidas", icon: WashingMachine },
-  { id: "puma", label: "Puma", icon: ShoppingBasket },
-  { id: "levi", label: "Levi's", icon: Airplay },
-  { id: "zara", label: "Zara", icon: Images },
-  { id: "h&m", label: "H&M", icon: Heater },
+  { id: "ulove", label: "ULove", icon: FaHeart },
+  { id: "ubon", label: "UBON", icon: FaHeadphones },
+  { id: "vingajoy", label: "Vingajoy", icon: FaShoppingBasket },
+  { id: "zbi", label: "ZBI", icon: FaBroadcastTower },
+  { id: "others", label: "Others", icon: FaBoxOpen },
+  // { id: "h&m", label: "H&M", icon: FaTshirt },
 ];
+
 function ShoppingHome() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const { productList, productDetails } = useSelector(
