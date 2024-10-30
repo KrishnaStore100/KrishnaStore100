@@ -9,6 +9,8 @@ import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
 import { useDispatch, useSelector } from "react-redux";
 import { shoppingViewHeaderMenuItems } from "@/config";
+import { GiElectric } from "react-icons/gi";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -142,8 +144,8 @@ function ShoppingHeader() {
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <Link to="/shop/home" className="flex items-center gap-2">
-          <HousePlug className="h-6 w-6" />
-          <span className="font-bold">Ecommerce</span>
+          <GiElectric className="h-6 w-6" />
+          <span className="font-bold">KrishnaStore</span>
         </Link>
         <Sheet>
           <SheetTrigger asChild>
